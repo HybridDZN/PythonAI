@@ -30,9 +30,7 @@ linear = linear_model.LinearRegression()
 linear.fit(x_train, y_train)
 accuracy = linear.score(x_test, y_test)
 
-# Displaying accuracy of the AI calculations
-print(round(accuracy*100, 2), "%")
-
+print("AI Output:\n ")
 # m coefficient of y=mx+c, shows slope of each different variable used in AI calculations
 print("Coefficient: \n", linear.coef_)
 print("Intercept: \n", linear.intercept_)
@@ -41,4 +39,8 @@ predictions = linear.predict(x_test)
 
 for x in range(len(predictions)):
     # Displays the data the AI is actually calculating
-    print(predictions[x], x_test[x], y_test[x])
+    print("Computer Result: ", predictions[x], "Test Paramaters: ", x_test[x], "Test Result: ", y_test[x])
+
+
+# Displaying accuracy of the AI calculations
+print("\n AI Prediction: ", round(accuracy * 100, 2), "%")
